@@ -2,6 +2,7 @@ import { Router} from "express"
 import  managerProducto from "../dao/mongoosedb/managerMongose/managerProductoMoogose.js"
 import { __dirname } from "../../utils.js"
 import session from "express-session"
+import {authToken}  from "../../utils.js"
 
 
 const router = Router()
@@ -42,8 +43,9 @@ router.get("/registro",(req,res)=>{
 router.get("/profile",(req,res)=>{
     res.render("profile")
 })
-router.get("/user", async (req, res) => {
-    res.render("profile",{user:req.session.user})
+router.get("/user",authToken, async (req, res) => {
+    res.render("profile",{
+        user:req.user})
     })
 
 

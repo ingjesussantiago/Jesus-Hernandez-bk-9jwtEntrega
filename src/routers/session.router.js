@@ -1,6 +1,7 @@
 import { Router } from "express";
 import userModel from "../dao/mongoosedb/models/user.model.js"
 import passport from "passport";//11
+import { generateJWToken } from "../../utils.js";
 
 
 const router = Router()
@@ -19,12 +20,17 @@ router.post("/login", passport.authenticate("login", { failureRedirect: '/api/se
     console.log(user);
 
     if (!user) return res.status(401).send({ status: "error", error: "credenciales incorrectas" });
-    req.session.user = {
-        nombre: `${user.nombre} ${user.apellido}`,
-        email: user.email,
-        edad: user.edad
-    }
-    res.send({ status: "success", payload: req.session.user, message: "¡Primer logueo realizado! :)" });
+    // req.session.user = {
+    //     nombre: `${user.nombre} ${user.apellido}`,
+    //     email: user.email,
+    //     edad: user.edad
+    // }
+    // res.send({ status: "success", payload: req.session.user, message: "¡Primer logueo realizado! :)" });
+    const access_token = generateJWToken(user);
+    console.log(access_token);
+    res.send({ access_token: access_token });
+
+
 });
 
 
