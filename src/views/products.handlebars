@@ -1,0 +1,38 @@
+ <div class="text-center">
+    <h1>Productos</h1>
+  </div>
+{{#if productos.productos.length}}
+{{#each productos.productos}}
+<div class="card " style="width:17rem">
+      {{!-- <h5 class="card-title text-center">{{title}}$</h5> --}}
+        {{!-- <h5 class="card-title text-center">{{this.title}}$</h5> --}}
+            <h5 class="card-title text-center">{{productos.title}}$</h5>
+  {{!-- <img src="{{thumbnails}}" class="card-img-top" height="50%" />
+  <div class="card-body row justify-content-center">
+
+    <p class="card-text text-center">${{price}}</p>
+    </div>
+  <a href="/api/products/{{_id}}" class="btn btn-primary text-center my-2">Ver Detalle</a> --}}
+</div>
+
+{{/each}}
+
+ <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link">{{productos.info.prev}}</a>
+    </li>
+    {{!-- <li class="page-item"><a class="page-link" href="#">1</a></li> --}}
+    <li class="page-item"><a class="page-link" href="#">{{productos.info.page}}</a></li>
+    {{!-- <li class="page-item"><a class="page-link" href="#">3</a></li> --}}
+    <li class="page-item">
+      <a class="page-link" href={{productos.info.nex}}></a>
+    </li>
+  </ul>
+</nav>
+
+{{else}}
+
+<h2>El arreglo esta vacio</h2>
+
+{{/if}}

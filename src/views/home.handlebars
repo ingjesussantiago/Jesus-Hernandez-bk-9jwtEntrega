@@ -1,0 +1,23 @@
+ <div class="text-center">
+
+    <h1>Productos</h1>
+  </div>
+{{#if productos.length}}
+{{#each productos}}
+<div class="card " style="width:17rem">
+  <img src="{{thumbnails}}" class="card-img-top" height="50%" />
+  <div class="card-body row justify-content-center">
+    <h5 class="card-title text-center">{{title}}</h5>
+    <p class="card-text text-center">${{price}}</p>
+    </div>
+  <a href="/api/products/{{_id}}" class="btn btn-primary text-center my-2">Ver Detalle</a>
+</div>
+
+{{/each}}
+
+{{else}}
+
+<h2>El arreglo esta vacio</h2>
+
+{{/if}}
+<script src="/socket.io/socket.io.js"></script>

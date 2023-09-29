@@ -1,0 +1,66 @@
+
+
+<div class="container-fluid justify-content-center col g-4 nb-3">
+  <div >
+    <h1>Captura de productos</h1>
+  </div>
+
+<div>
+  {{!-- < method="POST" action="/products" > --}}
+ <form method="POST" action="/api/products" enctype="multipart/form-data" >
+
+  <label for="name">Title:</label>
+  <input type="text" id="title" name="title" required>
+  <br>
+  <label for="name">Descripción:</label>
+  <input type="tex" id="descripcion" name="descripcion" required>
+  <br>
+  <label for="price">Code:</label>
+  <input type="number" id="code" name="code" required>
+  <br>
+    <label for="price">Precio:</label>
+  <input type="number" id="price" name="price" required>
+  <br>
+    <label for="price">Status</label>
+  <input type="boolean" id="status" name="status" required>
+  <br>
+    <label for="price">Stock</label>
+  <input type="number" id="stock" name="stock" required>
+  <br>
+    <label for="price">Category</label>
+  <input type="text" id="category" name="category" required>
+  <br>
+
+<label for="image">Imagen:</label>
+    <input type="file" name="file" id="file" required>
+    <br>
+
+<img id="preview" src="#" alt="Vista previa de la imagen" style="max-width: 300px; display: none;">
+
+
+
+  <button type="submit">Enviar</button>
+</form> 
+
+</div>
+
+</div>
+
+<script>
+    // Mostrar vista previa de la imagen seleccionada usando multer como middleware
+    const input = document.querySelector('input[type="file"]');
+    const preview = document.getElementById('preview');
+    
+    input.addEventListener('change', function () {
+      const file = input.files[0];
+      if (file) {
+        preview.style.display = 'block';
+        preview.src = URL.createObjectURL(file);
+      } else {
+        preview.style.display = 'none';
+        preview.src = '#';
+      }
+    });
+  </script>
+
+

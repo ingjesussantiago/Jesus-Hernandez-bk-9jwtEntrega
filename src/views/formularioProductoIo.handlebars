@@ -1,0 +1,59 @@
+<div class="container-fluid justify-content-center col g-4 nb-3">
+  <div>
+    <h1>Captura de productos con Io</h1>
+  </div>
+
+  <div>
+    <form id="formularioIo">
+
+      <label for="name">Title:</label>
+      <input type="text" id="title" name="title" required>
+      <br>
+      <label for="name">Descripción:</label>
+      <input type="tex" id="descripcion" name="descripcion" required>
+      <br>
+      <label for="price">Code:</label>
+      <input type="number" id="code" name="code" required>
+      <br>
+      <label for="price">Precio:</label>
+      <input type="number" id="price" name="price" required>
+      <br>
+      <label for="price">Status</label>
+      <input type="boolean" id="status" name="status" required>
+      <br>
+      <label for="price">Stock</label>
+      <input type="number" id="stock" name="stock" required>
+      <br>
+      <label for="price">Category</label>
+      <input type="text" id="category" name="category" required>
+      <br>
+{{!-- 
+      <label for="image">Imagen:</label>
+      <input type="file" name="file" id="imageInput">
+      <br>
+
+      <img id="previewImage" src="#" alt="Vista Previa" style="max-width: 300px; display: none;">
+ --}}
+
+
+      <button type="submit">Enviar</button>
+
+
+
+    </form>
+  </div>
+
+  <form action="">
+    <h2>Eliminar por id un producto</h2>
+
+    <label for="price">id</label>
+    <input type="number" id="idProducto" name="id" required>
+    <button type="button" id="buttonDelete">Eliminar</button>
+    <br>
+  </form>
+
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+{{!-- <script src="js/formrealtime.js"></script> --}}

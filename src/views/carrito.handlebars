@@ -1,0 +1,29 @@
+{{!-- <div class="container">
+
+    <ul class="list-group mt-3">
+        {{#if cart.products.length}}
+        <h1 class="mt-5">Lista de Carritos</h1>
+        {{#each carts}}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{_id}}
+            <a href="/api/carts/{{_id}}" class="btn btn-danger text-center my-2">Detalle de Carrito</a>
+        </li>
+        {{/each}}
+        {{else}}
+        <h2>No Existen carritos</h2>
+        {{/if}}
+    </ul>
+</div> --}}
+
+ {{#if cart.products.length}}
+    <p>El carrito tiene productos:</p>
+   {{#each cart.products}}
+      
+        <p>Precio: ${{price}}</p>
+      
+     </div>
+    {{/each}}
+  {{else}}
+    <p>El carrito está vacío.</p>
+    
+  {{/if}}
